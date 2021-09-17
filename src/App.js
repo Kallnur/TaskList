@@ -34,7 +34,9 @@ function App() {
   function reloadTask(){  //  вывод из локал после рестарта
     let loadTasks = JSON.parse(localStorage.getItem('Task-List'));
 
-    setTasks(loadTasks);
+    if(loadTasks != null){
+      setTasks(loadTasks);
+    }
   };
 
   useEffect(()=>reloadTask(),[]);
